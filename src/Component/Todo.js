@@ -5,6 +5,7 @@ import TodoList from "./TodoList";
 import { useEffect, useState } from "react";
 
 const Todo = () => {
+    console.log("Rendering /Todos");
     const api = useSelector(s => s.todo.todos);
     const data=[...api]
     data.sort((a,b)=>a.completed-b.completed)
@@ -18,6 +19,7 @@ const Todo = () => {
         setError(error)
     }
     useEffect(() => {
+        
         if (!Object.keys(error).length) {
             dispatch(addTodo({ ...input, id: Date.now() }))
             setInput({ ...input, title: "", desc: "" })
@@ -26,7 +28,7 @@ const Todo = () => {
         [error])
     const handlechange = (e) => setInput({ ...input, [e.target.name]: e.target.value })
     
-    
+   
     return (
         <>
             <div className="flex flex-col items-center">

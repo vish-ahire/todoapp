@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client"
 import React from "react";
-import { Login, Home, Header, Register, Todo } from "./Component";
+import { Login, Home, Header, Register } from "./Component";
+import Todo from './Component/Todo'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import PrivateRoute from "./Component/PrivateRoute";

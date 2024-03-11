@@ -3,12 +3,15 @@ import { validateValue } from "./validateValue"
 import { NavLink } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { isLogin } from "../Store/userSlice"
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
     const [input, setInput] = useState({
         email: "",
         password: ""
     })
+    const navigate = useNavigate();
     const data=useSelector(state=> state.user.login)
     console.log(data)
     const dispatch=useDispatch()
@@ -18,7 +21,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setError(validateValue(input))
-
+        
     }
     const validateUser = (user) => {
         const data = localStorage.getItem("userInfo")
@@ -27,9 +30,9 @@ const Login = () => {
             return false;
         } else {
             let userData = JSON.parse(data);
-
             if (userData.email === user.email && userData.password === user.password) {
                 dispatch(isLogin(true))
+                navigate( "/todo");
                 return true;
             }
             else {
