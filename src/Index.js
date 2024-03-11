@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom/client"
 import React from "react";
 import { Login, Home, Header, Register } from "./Component";
-import Todo from './Component/Todo'
+import Todo from "./Component/Todo";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
-import PrivateRoute from "./Component/PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 import TodoStore from "./Store/TodoStore";
 const Index = () => {

@@ -7,8 +7,10 @@ import { useEffect, useState } from "react";
 const Todo = () => {
     console.log("Rendering /Todos");
     const api = useSelector(s => s.todo.todos);
-    const data=[...api]
-    data.sort((a,b)=>a.completed-b.completed)
+    
+    const data = [...api]
+    data.sort((a, b) => a.completed - b.completed)
+    
     const [input, setInput] = useState({ title: "", desc: "", completed: false })
     const [error, setError] = useState({ title: "" })
     const dispatch = useDispatch()
@@ -18,17 +20,18 @@ const Todo = () => {
         !input.desc ? error.desc = "Description shoould not be empty" : null
         setError(error)
     }
+    
     useEffect(() => {
-        
+
         if (!Object.keys(error).length) {
             dispatch(addTodo({ ...input, id: Date.now() }))
             setInput({ ...input, title: "", desc: "" })
         }
-    },
-        [error])
-    const handlechange = (e) => setInput({ ...input, [e.target.name]: e.target.value })
+    }, [error])
     
-   
+    const handlechange = (e) => setInput({ ...input, [e.target.name]: e.target.value })
+
+
     return (
         <>
             <div className="flex flex-col items-center">
