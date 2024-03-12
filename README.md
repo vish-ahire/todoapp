@@ -21,7 +21,7 @@ npm start
 4.Open your browser and navigate to http://localhost:1234
 
 ---
-## ✨ **Usage**
+## ☀ **Usage**
 To create a new task, enter a title and description in the input fields and click the "Create Task" button. The new task will be added to the list of tasks.
 
 To delete a task, click the "Delete" button next to the task. The task will be removed from the list of tasks.
