@@ -10,11 +10,11 @@ const Home = () => {
             <div>
                 <button
                     onClick={() => { navigate('/register' ,{ replace: true }) }} 
-                    className="p-2 m-2 bg-blue-900 text-white rounded-2xl w-24">
+                    className="p-2 m-2 shadow-lg bg-blue-900 text-white rounded-2xl w-24">
                     Register</button>
                 <button
                     onClick={() => { navigate( '/login',{replace:true}) }}
-                    className="p-2 m-2 bg-blue-900 text-white rounded-2xl w-24">
+                    className="p-2 m-2 shadow-2xl bg-blue-900 text-white rounded-2xl w-24">
                     Login</button>
             </div>
         </div>

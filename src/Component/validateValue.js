@@ -11,7 +11,7 @@ export const validateValue=(data)=>{
     
     if(!data.age && data.age==0) error.age="please  enter your age"
     
-    else if(data.age <= 12) error.age='Age must be greater than or equal to  12';
+    else if(data.age <= 12) error.age='Age must be greater than 12';
     return error;
 }
 
