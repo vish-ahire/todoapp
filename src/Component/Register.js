@@ -5,7 +5,7 @@ const Register = () => {
     const [input, setInput] = useState({
         email: "",
         password: "",
-        age: 0
+        age: ""
     })
     const navigate=useNavigate()
     const [Reg,setReg]=useState(false)

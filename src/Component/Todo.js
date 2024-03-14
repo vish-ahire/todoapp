@@ -3,38 +3,15 @@ import { addTodo } from "../Store/todoSlice"
 
 import TodoList from "./TodoList";
 import { useEffect, useState } from "react";
+import CreateTask from "./CreateTask";
 
 const Todo = () => {
-    console.log("Rendering /Todos");
     const api = useSelector(s => s.todo.todos);
-
     const data = [...api]
     data.sort((a, b) => a.completed - b.completed)
-
-    const [input, setInput] = useState({ title: "", desc: "", completed: false })
-    const [error, setError] = useState({ title: "" })
-    const dispatch = useDispatch()
-    const handleClick = () => {
-        let error = {}
-        !input.title ? error.title = "Title should not be empty" : null
-        !input.desc ? error.desc = "Description shoould not be empty" : null
-        setError(error)
-    }
-
-    useEffect(() => {
-
-        if (!Object.keys(error).length) {
-            dispatch(addTodo({ ...input, id: Date.now() }))
-            setInput({ ...input, title: "", desc: "" })
-        }
-    }, [error])
-
-    const handlechange = (e) => setInput({ ...input, [e.target.name]: e.target.value })
-
-
     return (
         <>
-            <div className="flex flex-col  items-center">
+            {/* <div className="flex flex-col  items-center">
                 <div className="flex flex-col w-72 ">
                     <div className="flex justify-between items-center" >
                         <label >Title</label>
@@ -63,7 +40,10 @@ const Todo = () => {
                 </div>
                 {error.desc && <p className="text-red-500">{error.desc}</p>}
                 <button className="bg-blue-400 m-2 p-2 rounded-xl" onClick={handleClick}>CreateTask</button>
-            </div>
+            </div> */}
+            <diV>
+                <CreateTask/>
+            </diV>
             <div className="flex flex-col items-center">
 
                 <h1 className="text-4xl p-8">Task List - 📋</h1>
