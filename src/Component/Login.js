@@ -13,7 +13,7 @@ const Login = () => {
     })
     const navigate = useNavigate();
     const data=useSelector(state=> state.user.login)
-    console.log(data)
+
     const dispatch=useDispatch()
     const [error, setError] = useState({ email: "" })
     const [isValid, setIsValid] = useState({})
