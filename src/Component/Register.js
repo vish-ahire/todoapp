@@ -25,7 +25,7 @@ const Register = () => {
 
     return (
         <>
-            <div className="text-center font-bold text-4xl my-10 ">Login</div>
+            <div className="text-center font-bold text-4xl my-10 ">Register</div>
             <div className="flex items-center flex-col ">
                 <input
                     className="border rounded-xl border-1px  border-black m-2 p-1 placeholder:text-center"
